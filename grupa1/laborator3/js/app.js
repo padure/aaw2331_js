@@ -52,3 +52,39 @@
 //     console.log("Nu avem asa culoare");
 // }
 
+//Problema 5 pag 37
+let num = 1;
+for (let i = num; i <= 10; i++) {
+    switch (i) {
+        case 1:
+            console.log(i);
+            break;
+        case 2:
+            console.log(i);
+            break;
+        case 3:
+            console.log(i);
+            break;
+        case 4:
+            console.log(i);
+            break;
+        case 5:
+            console.log(i);
+            break;
+        case 6:
+            console.log(i);
+            break;
+        case 7:
+            console.log(i);
+            break;
+        case 8:
+            console.log(i);
+            break;
+        case 9:
+            console.log(i);
+            break;
+        default:
+            console.log("Ultimul număr este 10");
+            break;
+    }
+}
