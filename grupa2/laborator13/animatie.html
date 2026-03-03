@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animatie</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+        }
+        .main{
+            width: 800px;
+            height: 800px;
+            box-shadow: 0 0 1px lime;
+            background: rgba(0, 255, 0, 0.1);
+            position: relative;
+        }
+        .content{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: lime;
+            transition: all ease-in-out 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="content"></div>
+    </div>
+    <script>
+        // Elemente
+        const contentElement = document.querySelector(".content");
+        const mainElement = document.querySelector(".main");
+        // Valori
+        let left = 0;
+        let lungime = mainElement.offsetWidth;
+        // Main
+        const interval = setInterval( () => {
+            if( lungime > (left + contentElement.offsetWidth) ){
+                left += 50;
+                contentElement.style.left = `${left}px`;
+            } else{
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

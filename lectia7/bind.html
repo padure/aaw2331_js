@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metoda Bind</title>
+</head>
+<body>
+    <script>
+        const user = {nume: "John Doe", mesaj: "Salut"};
+
+        const salut = function(semn){
+            console.log(`${this.mesaj}, eu sunt ${this.nume}${semn}`);
+        }
+
+        // salut.call(user, "!");
+        // salut.apply(user, ["!"]);
+        // salut.bind(user, "!"); - Nu functioneaza!
+        // const salutUser = salut.bind(user);
+        // salutUser("!");
+    </script>
+</body>
+</html>
