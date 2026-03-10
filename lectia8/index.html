@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectia 8</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <button 
+        class="bg-sky-800 text-white px-8 py-2 text-3xl m-24"
+        id="click"
+        >Click
+    </button>
+    <div class="w-2/3 m-auto shadow p-2">
+        <form action="#" method="post" class="flex flex-col gap-4" name="login">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="border p-2">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="border p-2">
+            <button type="submit" class="bg-gray-800/80 text-white p-2">Save</button>
+        </form>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
+
