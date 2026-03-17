@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const text='$cirjeu.dumitru@elev.cihcahul.md';
+        const conditie=/[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-.]+.[a-zA-Z0-9-.]{2,}/;
+
+        if(conditie.test(text)){
+            setTimeout(()=>{
+                console.log("email valid")
+            },2000)
+        }
+    </script>
+</body>
+</html>

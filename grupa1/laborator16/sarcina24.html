@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcina 24</title>
+</head>
+<body>
+    <script>
+        const culori = ["pink", "red", "skyblue", "aqua", "blue"];
+        let cl = 0;
+
+        setInterval( () => {
+            document.body.style.backgroundColor = culori[cl];
+            cl++;
+
+            if(cl >= culori.length){
+                cl=0;
+            }
+
+        }, 3000);
+    </script>
+</body>
+</html>

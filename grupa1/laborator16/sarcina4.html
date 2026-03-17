@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcina4</title>
+</head>
+<body>
+    <script>
+        const text="lunca.daniel@elev.cihcahul.md l.d@gmail.com";
+        const emailRegex=/[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g
+        const Adrese=text.match(emailRegex);
+        console.log(Adrese.join('-'));
+
+    </script>
+</body>
+</html>

@@ -8,8 +8,13 @@
 <body>
     <script>
         const nr="+37378027862";
-        const verifica = /
-
+        const verifica = /^\+373\d{8}$/g;
+        let control = verifica.test(nr);
+        if (control){
+            console.log('Număr valid');
+        } else {
+            console.log('Numar invalid');
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcina 21</title>
+</head>
+<body>
+    <script>
+        const culori = ["yellow", "red", "blue","aqua"];
+        
+        let i = 0;
+
+        const interval = setInterval(() => {
+            if(i === 4) clearInterval(interval);
+            document.body.style.backgroundColor = culori[i];
+            i++;
+        },1000)
+    </script>
+</body>
+</html>
