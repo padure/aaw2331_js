@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcina 12</title>
+</head>
+<body>
+    <h2>Verifica codPostal</h2>
+
+    <input type="text" id="codPostal" placeholder="Verifica codulPostal">
+    <button onclick="verificaCodPostal()">Verifica</button>
+    <p id="rezultat"></p>
+
+    <script>
+        function verificaCodPostal() {
+            let cod = document.getElementById("codPostal").value;
+            let verificare = /^\d{6}$/;
+            document.getElementById("rezultat").textContent = verificare.test(cod)
+            ? "Textul este valid"
+            : "Textul nu este valid"
+        }
+    </script>
+</body>
+</html>

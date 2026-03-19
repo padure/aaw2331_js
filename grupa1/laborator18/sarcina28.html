@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcina28</title>
+</head>
+<body>
+
+    <input type="text" id="username" placeholder="username">
+    <button onclick="valideazaUsername()" >Valideaza</button>
+    <h1 id = "mesaj"></h1>
+    
+    <script>
+        function valideazaUsername() {
+            const username = document.getElementById("username").value;
+            const mesaj = document.getElementById("mesaj");
+
+            const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*_)[a-zA-Z0-9_]{4,12}$/;
+            
+            if(regex.test(username)) {
+                setTimeout(()=>{
+                    mesaj.textContent="Username Valid";
+                    mesaj.style.color="green";
+                },1000);
+            } else{
+                mesaj.textContent = "Username Invalid! Username-ul trebuie să conțină doar litere, cifre și _, iar lungimea să fie între 4 și 12 caractere";
+                mesaj.style.color = "red";
+            }    
+        }
+    </script>
+</body>
+</html>

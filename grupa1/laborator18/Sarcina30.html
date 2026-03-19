@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count =5;
+        const intervalId = setInterval(()=>{
+            if(count >= 0){
+                console.log(count);
+                count--;
+            }else{
+                clearInterval(intervalId);
+                const mesajFinal = "Lansare!";
+                const regex = /^[A-Za-z!]+$/;
+                if(regex.test(mesajFinal)){
+                    console.log("Mesajul final este valid");
+                }else{
+                    console.log("Mesajul final este invalid.");
+                }
+            }
+        },1000);
+    </script>
+</body>
+</html>

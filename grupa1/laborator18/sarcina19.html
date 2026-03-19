@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometru</title>
+</head>
+<body>
+    <script>
+        let timp = 10;
+
+        const interval = setInterval(() => {
+            console.log(" Timp ramas: " + timp + " secunde ");
+            timp--;
+            if(timp < 0){
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

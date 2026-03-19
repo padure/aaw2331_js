@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcina 29</title>
+</head>
+
+<body>
+    <script>
+        const text = "Bine ai venit pe pagina mea!";
+        const cuvinteInterzise = ["rau", "urat"];
+        let gasit = false;
+        let i = 0;
+        while (!text.includes(cuvinteInterzise[i])) {
+            i++;
+            gasit = true;
+        }
+        if (gasit) {
+            setTimeout(() => {
+                console.log("Avertizare, textul tau contine cuvinte interzise!")
+            }, 2000);
+        }
+        // for(let i=0;i<cuvinteInterzise.length;i++){
+        //     if(text.includes(cuvinteInterzise[i])){
+        //         gasit=true;
+        //         setTimeout(()=>{
+        //             console.log("Avertizare,textul tau contine cuvinte interzise!")
+        //         },2000);
+        //     }
+        //     if(gasit==false){
+        //         console.log("Textul tau este acceptat.");
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

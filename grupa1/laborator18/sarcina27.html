@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Sarcina 27
+Elaborează un script care caută toate cifrele dintr-un text și le afișează una câte una, la interval de 1 secundă.
+ -->
+    <script>
+        const text = "astazi 12 dfg 2025 daktyg45 ";
+        const cifre = text.match(/\d/g);
+        let i=0;
+        
+        const interval = setInterval(() => {
+            if(!(i<cifre.length-1)) clearInterval(interval);
+            console.log(`Cifra pe pozitia ${i} este: ${cifre[i]}` );
+            i++;
+        },1000)
+    </script>
+</body>
+</html>

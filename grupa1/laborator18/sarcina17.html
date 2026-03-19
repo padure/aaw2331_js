@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcina 17</title>
+</head>
+<body>
+    <script>
+        let n = 1;
+        const intr = setInterval(() => {
+            console.log(n++);
+            if(n > 5){
+                clearInterval(intr);
+                console.log("Intervalul s-a terminat");
+            }
+            
+        },1000)
+    </script>
+</body>
+</html>
