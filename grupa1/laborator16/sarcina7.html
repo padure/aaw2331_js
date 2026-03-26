@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarcina 7</title>
+</head>
+<body>
+    <script>
+        const text = "Eu am 6 mere si 5 pere";
+        const extrageNumere = text.match(/\d/g);
+        const suma = extrageNumere.reduce( (acc, val) =>acc += Number(val), 0);
+        console.log(suma);
+    </script>
+</body>
+</html>
