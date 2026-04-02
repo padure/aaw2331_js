@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laborator 22</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="container w-2/3 m-auto">
+        <h3 class="text-2xl font-semibold text-center py-5 text-teal-800">Primăvara în ochii noștrii!</h3>
+        <div class="slider flex flex-col h-[400px] overflow-hidden">
+            <img class="item h-[400px] object-cover transition" src="./images/image1.jpg" alt="Slide 1">
+            <img class="item h-[400px] object-cover transition hidden" src="./images/image2.jpg" alt="Slide 2">
+            <img class="item h-[400px] object-cover transition hidden" src="./images/image3.jpg" alt="Slide 3">
+            <img class="item h-[400px] object-cover transition hidden" src="./images/image4.jpg" alt="Slide 4">
+            <img class="item h-[400px] object-cover transition hidden" src="./images/image5.jpg" alt="Slide 5">
+        </div>
+        <div class="indicators flex justify-center gap-4">
+            <button class="border border-teal-800 text-teal-800 py-1 px-3 rounded mt-4" id="next">Next</button>
+            <button class="border border-teal-800 text-teal-800 py-1 px-3 rounded mt-4" id="prev">Previous</button>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
