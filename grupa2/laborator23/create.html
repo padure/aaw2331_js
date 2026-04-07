@@ -58,48 +58,45 @@
     </nav>
 
     <div class="container w-full md:w-2/5 m-auto">
-        <form action="/api/carti" method="POST" class="bg-white p-8 rounded-2xl shadow-lg w-full space-y-4 mt-10">
-
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-4">
-                Adaugă o carte
-            </h2>
+        <form action="#" method="post" id="add_book"
+            class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-6">
 
             <div>
-                <label class="block text-sm font-medium text-gray-700">Titlu</label>
-                <input type="text" name="title"
-                    class="mt-1 w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none">
+                <label for="title" class="block text-sm font-medium text-gray-700">Titlu</label>
+                <input type="text" id="title" name="title"
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    placeholder="Ex: Umbrele Timpului" required>
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700">Autor</label>
-                <input type="text" name="author"
-                    class="mt-1 w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none">
+                <label for="author" class="block text-sm font-medium text-gray-700">Autor</label>
+                <input type="text" id="author" name="author"
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    placeholder="Ex: Andrei Popescu" required>
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700">Număr pagini</label>
-                <input type="number" name="pages"
-                    class="mt-1 w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none">
+                <label for="pages" class="block text-sm font-medium text-gray-700">Număr pagini</label>
+                <input type="number" id="pages" name="pages"
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    placeholder="Ex: 320" min="1" required>
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700">Descriere</label>
-                <textarea name="description" rows="3"
-                    class="mt-1 w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"></textarea>
+                <label for="description" class="block text-sm font-medium text-gray-700">Descriere</label>
+                <textarea id="description" name="description" rows="4" name="description"
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    placeholder="Descrierea cărții..."></textarea>
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700">ID extern</label>
-                <input type="text" name="id"
-                    class="mt-1 w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none">
+                <button type="submit"
+                    class="w-full bg-gray-800 text-white py-2 px-4 rounded-xl hover:bg-gray-700 transition duration-200 font-semibold">
+                    Salvează cartea
+                </button>
             </div>
-
-            <button type="submit" class="w-full bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-600 transition">
-                Trimite
-            </button>
 
         </form>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
