@@ -7,7 +7,16 @@ export const getBooks = async () => {
     return books;
 }
 
-export const getBookByID = async (id) => {}
-export const createBook = async () => {}
-export const updateBook = async (id) => {}
-export const deleteBook = async (id) => {}
+export const getBookByID = async (id) => { }
+//Add book to DB: db.json
+export const createBook = async (book) => {
+    const response = await fetch(URL_BOOKS, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(book),
+    });
+}
+export const updateBook = async (id) => { }
+export const deleteBook = async (id) => { }
