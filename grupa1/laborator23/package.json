@@ -1,4 +1,13 @@
 {
+  "name": "laborator23",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "server": "npx json-server db.json --port 3000"
+  },
+  "keywords": [],
+  "author": "Padure Gheorghe",
+  "license": "ISC",
   "dependencies": {
     "json-server": "^1.0.0-beta.15"
   }

@@ -16,5 +16,10 @@ export const buildCard = (book) => {
         <div class="flex items-center justify-between text-sm text-gray-500">
             <span>${book.pages} pagini</span>
         </div>
+        <!-- Butoane -->
+        <div class="flex items-center justify-between text-sm mt-4">
+            <button class='bg-gray-800 px-2 py-1 text-gray-100 rounded'>Edit</button>
+            <button class='bg-red-800 px-2 py-1 text-gray-100 rounded'>Delete</button>
+        </div>
     </div>`;
 }

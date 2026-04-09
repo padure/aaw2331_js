@@ -41,6 +41,21 @@
       "author": "Radu Vasilescu",
       "description": "Un roman emoționant despre iubire, pierdere și regăsire.",
       "pages": 290
+    },
+    {
+      "title": "Book 1",
+      "author": "Test",
+      "pages": "125",
+      "description": "Test",
+      "id": "qJ3RmWOhXeo"
+    },
+    {
+      "title": "asd",
+      "author": "asd",
+      "pages": "232",
+      "description": "sdSD",
+      "id": "VWB0a6mCcGQ"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
