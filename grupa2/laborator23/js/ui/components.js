@@ -16,5 +16,17 @@ export const buildCard = (book) => {
         <div class="flex items-center justify-between text-sm text-gray-500">
             <span>${book.pages} pagini</span>
         </div>
+        <!-- Butoane -->
+        <div class="flex items-center justify-between text-sm mt-4">
+            <a href="edit.html?id=${book.id}" 
+               class="px-2 py-1 bg-gray-800 text-gray-100 rounded hover:bg-gray-700 transition">
+               Edit
+            </a>
+            <button 
+                class="px-2 py-1 bg-red-800 text-gray-100 rounded hover:bg-red-700 transition btn-delete"
+                data-id="${book.id}">
+                Delete
+            </button>
+        </div>
     </div>`;
 }

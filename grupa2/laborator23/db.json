@@ -1,0 +1,82 @@
+{
+  "books": [
+    {
+      "title": "Umbrele Timpului",
+      "author": "Andrei Popescu",
+      "pages": 320,
+      "description": "Un roman captivant despre călătoria în timp și consecințele schimbării trecutului.",
+      "id": "-e0vVGy5Jlk"
+    },
+    {
+      "title": "Ecoul Tăcerii",
+      "author": "Maria Ionescu",
+      "pages": 250,
+      "description": "O poveste emoționantă despre pierdere, regăsire și puterea amintirilor.",
+      "id": "bLduq-bUh-0"
+    },
+    {
+      "title": "Orașul de Sub Nori",
+      "author": "Victor Dumitrescu",
+      "pages": 410,
+      "description": "Un thriller futurist într-un oraș suspendat deasupra lumii.",
+      "id": "hpnk2V68J0U"
+    },
+    {
+      "title": "Grădina Secretă a Viselor",
+      "author": "Elena Georgescu",
+      "pages": 290,
+      "description": "O colecție de povești fantastice despre vise care devin realitate.",
+      "id": "BNNWpUyopVw"
+    },
+    {
+      "title": "Drumul Spre Nord",
+      "author": "Radu Marin",
+      "pages": 360,
+      "description": "Un jurnal de călătorie plin de aventuri și descoperiri personale.",
+      "id": "MjcjyIn9WGk"
+    },
+    {
+      "title": "Foc și Gheață",
+      "author": "Ioana Petrescu",
+      "pages": 330,
+      "description": "O poveste de dragoste imposibilă într-un tărâm al extremelor.",
+      "id": "J6KfvLUd-z0"
+    },
+    {
+      "title": "Codul Eternității",
+      "author": "Alexandru Pavel",
+      "pages": 280,
+      "description": "Un roman SF despre inteligență artificială și nemurire.",
+      "id": "UYU8Rt69YK4"
+    },
+    {
+      "title": "Sub Lumina Lunii",
+      "author": "Cristina Stan",
+      "pages": 210,
+      "description": "O poveste romantică desfășurată într-un mic sat de munte.",
+      "id": "xzr2owunjEw"
+    },
+    {
+      "title": "Labirintul Minții",
+      "author": "Daniel Enache",
+      "pages": 370,
+      "description": "Un thriller psihologic despre misterele subconștientului.",
+      "id": "6uD_45CLjrM"
+    },
+    {
+      "title": "Ultimul Apus",
+      "author": "Bianca Rusu",
+      "pages": 300,
+      "description": "O dramă despre sfârșituri și noi începuturi într-o lume în schimbare.",
+      "id": "yVyFWQSXWz0"
+    },
+    {
+      "title": "Umbrele Timpului",
+      "author": "Andrei Popescu",
+      "pages": 320,
+      "description": "Un roman captivant despre călătoria în timp și consecințele schimbării trecutului.",
+      "id": "WgNTWsWJ-8Y"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
