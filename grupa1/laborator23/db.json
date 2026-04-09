@@ -1,0 +1,46 @@
+{
+  "books": [
+    {
+      "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "title": "Umbrele trecutului",
+      "author": "Andrei Popescu",
+      "description": "O poveste captivantă despre secrete de familie și alegeri care schimbă destine.",
+      "pages": 320
+    },
+    {
+      "id": "9c858901-8a57-4791-81fe-4c455b099bc9",
+      "title": "Călătorie printre stele",
+      "author": "Elena Ionescu",
+      "description": "Un roman SF despre explorarea universului și limitele umanității.",
+      "pages": 410
+    },
+    {
+      "id": "1c6b147f-6fcb-4a2d-9b5b-1a2e5d8f3c77",
+      "title": "Arta simplității",
+      "author": "Mihai Dumitrescu",
+      "description": "Ghid practic pentru o viață mai echilibrată și mai conștientă.",
+      "pages": 210
+    },
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "title": "Enigma codului pierdut",
+      "author": "Cristina Marinescu",
+      "description": "Un thriller plin de mistere, simboluri și descoperiri neașteptate.",
+      "pages": 365
+    },
+    {
+      "id": "7d444840-9dc0-11d1-b245-5ffdce74fad2",
+      "title": "Povești din copilărie modernă",
+      "author": "Ioana Georgescu",
+      "description": "Colecție de povești scurte adaptate vremurilor actuale.",
+      "pages": 180
+    },
+    {
+      "id": "6f1a7d2e-3b4c-4d5e-8f9a-123456789abc",
+      "title": "Ultimul apus",
+      "author": "Radu Vasilescu",
+      "description": "Un roman emoționant despre iubire, pierdere și regăsire.",
+      "pages": 290
+    }
+  ]
+}
