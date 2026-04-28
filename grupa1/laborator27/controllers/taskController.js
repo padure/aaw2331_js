@@ -5,7 +5,8 @@ const taskController = {
     index: async (req, res) => {
         try {
             const tasks = await Task.getAll();
-            res.render('tasks/index', { tasks });
+            const completedTasks = tasks.filter(t => t.status === 'completed');
+            res.render('tasks/index', { tasks, completedTasks });
         } catch (error) {
             res.status(500).send("Eroare la recuperarea sarcinilor: " + error.message);
         }

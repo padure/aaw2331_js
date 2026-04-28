@@ -1,70 +1,108 @@
-<%- include('../partials/head', { title: 'Lista sarcinilor' }) %>
+<%- include('../partials/head', { title: 'Dashboard Sarcini' }) %>
 
 <div class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-extrabold text-gray-800">Lista sarcinilor</h1>
-        <a href="/tasks/create" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md">
+        <h1 class="text-3xl font-extrabold text-gray-800">Management Sarcini</h1>
+        <a href="/tasks/create" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition shadow-md">
             + Sarcină Nouă
         </a>
     </div>
 
-    <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100">
+    <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100 mb-12">
         <table class="min-w-full leading-normal">
             <thead>
-                <tr class="bg-gray-50 text-gray-600 text-left text-sm uppercase font-semibold tracking-wider">
-                    <th class="px-5 py-4 border-b">Titlu & Descriere</th>
+                <tr class="bg-gray-50 text-gray-600 text-left text-sm uppercase font-semibold">
+                    <th class="px-5 py-4 border-b">Sarcina</th>
                     <th class="px-5 py-4 border-b">Status</th>
-                    <th class="px-5 py-4 border-b">Prioritate</th>
-                    <th class="px-5 py-4 border-b">Deadline</th>
                     <th class="px-5 py-4 border-b text-center">Acțiuni</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
-                <% if (tasks.length > 0) { %>
-                    <% tasks.forEach(task => { %>
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-5 py-4">
-                                <p class="text-gray-900 font-medium"><%= task.title %></p>
-                                <p class="text-gray-500 text-xs truncate w-64"><%= task.description %></p>
-                            </td>
-                            <td class="px-5 py-4">
-                                <span class="px-3 py-1 rounded-full text-xs font-semibold 
-                                    <%= task.status === 'completed' ? 'bg-green-100 text-green-700' : 
-                                       task.status === 'in_progress' ? 'bg-blue-100 text-blue-700' : 'bg-yellow-100 text-yellow-700' %>">
-                                    <%= task.status.replace('_', ' ') %>
-                                </span>
-                            </td>
-                            <td class="px-5 py-4">
-                                <span class="text-sm font-medium
-                                    <%= task.priority === 'high' ? 'text-red-600' : 
-                                       task.priority === 'medium' ? 'text-orange-500' : 'text-gray-500' %>">
-                                    ● <%= task.priority.toUpperCase() %>
-                                </span>
-                            </td>
-                            <td class="px-5 py-4 text-sm text-gray-700">
-                                <%= new Date(task.deadline).toLocaleDateString('ro-RO') %>
-                            </td>
-                            <td class="px-5 py-4 text-center">
-                                <div class="flex justify-center space-x-3">
-                                    <a href="/tasks/<%= task.id %>/edit" class="text-indigo-600 hover:text-indigo-900 font-medium text-sm">Editează</a>
-                                    
-                                    <form action="/tasks/<%= task.id %>/delete" method="POST" onsubmit="return confirm('Ești sigur că vrei să ștergi această sarcină?')">
-                                        <button type="submit" class="text-red-600 hover:text-red-900 font-medium text-sm">Șterge</button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                    <% }); %>
-                <% } else { %>
-                    <tr>
-                        <td colspan="5" class="px-5 py-10 text-center text-gray-500 italic">
-                            Nu există sarcini momentan. <a href="/tasks/create" class="text-blue-500 underline">Adaugă una acum!</a>
+                <% tasks.forEach(task => { %>
+                    <tr class="hover:bg-gray-50 transition-colors">
+                        <td class="px-5 py-4">
+                            <p class="text-gray-900 font-medium"><%= task.title %></p>
+                            <p class="text-gray-500 text-xs truncate w-48"><%= task.description %></p>
+                        </td>
+                        <td class="px-5 py-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold 
+                                <%= task.status === 'completed' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700' %>">
+                                <%= task.status %>
+                            </span>
+                        </td>
+                        <td class="px-5 py-4 text-center">
+                            <div class="flex justify-center space-x-3">
+                                <a href="/tasks/<%= task.id %>/edit" class="text-indigo-600 hover:text-indigo-900 text-sm">Editează</a>
+                                <form action="/tasks/<%= task.id %>/delete" method="POST" onsubmit="return confirm('Ștergi sarcina?')">
+                                    <button type="submit" class="text-red-600 hover:text-red-900 text-sm">Șterge</button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
-                <% } %>
+                <% }); %>
             </tbody>
         </table>
     </div>
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <span class="bg-green-500 w-2 h-8 rounded-full mr-3"></span>
+            Sarcini Finalizate (Slider)
+        </h2>
+
+        <div class="swiper completedTasksSwiper pb-10">
+            <div class="swiper-wrapper">
+                <% 
+                   const completedTasks = tasks.filter(t => t.status === 'completed');
+                   if (completedTasks.length > 0) { 
+                %>
+                    <% completedTasks.forEach(task => { %>
+                        <div class="swiper-slide">
+                            <div class="bg-white p-6 rounded-xl border border-green-100 shadow-sm hover:shadow-md transition border-t-4 border-t-green-500 h-full flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 mb-2 truncate"><%= task.title %></h3>
+                                    <p class="text-gray-500 text-sm line-clamp-3 mb-4"><%= task.description %></p>
+                                </div>
+                                <div class="text-xs text-gray-400 font-medium">
+                                    Bifat la: <%= new Date(task.deadline).toLocaleDateString('ro-RO') %>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <div class="text-gray-400 italic">Nu există sarcini finalizate pentru afișare.</div>
+                <% } %>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper('.completedTasksSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                // când fereastra este >= 640px (mobil landscape)
+                640: { slidesPerView: 2 },
+                // când fereastra este >= 768px (tableta)
+                768: { slidesPerView: 3 },
+                // când fereastra este >= 1024px (LG - desktop)
+                1024: { slidesPerView: 5 }
+            }
+        });
+    });
+</script>
+
+<style>
+    .swiper-pagination-bullet-active {
+        background: #10b981 !important; /* Verde pentru a se asorta cu 'completed' */
+    }
+</style>
 
 <%- include('../partials/footer') %>
