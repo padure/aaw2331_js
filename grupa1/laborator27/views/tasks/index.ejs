@@ -1,4 +1,70 @@
-<%- include('../partials/head', { title: 'Lista sarcinilor' }) %> 
-<h1 class="text-2xl font-bold mb-6">Lista sarcinilor</h1> 
-<!-- aici se afișează sarcinile --> 
-<%- include('../partials/footer') %> 
+<%- include('../partials/head', { title: 'Lista sarcinilor' }) %>
+
+<div class="container mx-auto px-4 py-8">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-extrabold text-gray-800">Lista sarcinilor</h1>
+        <a href="/tasks/create" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md">
+            + Sarcină Nouă
+        </a>
+    </div>
+
+    <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100">
+        <table class="min-w-full leading-normal">
+            <thead>
+                <tr class="bg-gray-50 text-gray-600 text-left text-sm uppercase font-semibold tracking-wider">
+                    <th class="px-5 py-4 border-b">Titlu & Descriere</th>
+                    <th class="px-5 py-4 border-b">Status</th>
+                    <th class="px-5 py-4 border-b">Prioritate</th>
+                    <th class="px-5 py-4 border-b">Deadline</th>
+                    <th class="px-5 py-4 border-b text-center">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                <% if (tasks.length > 0) { %>
+                    <% tasks.forEach(task => { %>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-5 py-4">
+                                <p class="text-gray-900 font-medium"><%= task.title %></p>
+                                <p class="text-gray-500 text-xs truncate w-64"><%= task.description %></p>
+                            </td>
+                            <td class="px-5 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold 
+                                    <%= task.status === 'completed' ? 'bg-green-100 text-green-700' : 
+                                       task.status === 'in_progress' ? 'bg-blue-100 text-blue-700' : 'bg-yellow-100 text-yellow-700' %>">
+                                    <%= task.status.replace('_', ' ') %>
+                                </span>
+                            </td>
+                            <td class="px-5 py-4">
+                                <span class="text-sm font-medium
+                                    <%= task.priority === 'high' ? 'text-red-600' : 
+                                       task.priority === 'medium' ? 'text-orange-500' : 'text-gray-500' %>">
+                                    ● <%= task.priority.toUpperCase() %>
+                                </span>
+                            </td>
+                            <td class="px-5 py-4 text-sm text-gray-700">
+                                <%= new Date(task.deadline).toLocaleDateString('ro-RO') %>
+                            </td>
+                            <td class="px-5 py-4 text-center">
+                                <div class="flex justify-center space-x-3">
+                                    <a href="/tasks/<%= task.id %>/edit" class="text-indigo-600 hover:text-indigo-900 font-medium text-sm">Editează</a>
+                                    
+                                    <form action="/tasks/<%= task.id %>/delete" method="POST" onsubmit="return confirm('Ești sigur că vrei să ștergi această sarcină?')">
+                                        <button type="submit" class="text-red-600 hover:text-red-900 font-medium text-sm">Șterge</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="5" class="px-5 py-10 text-center text-gray-500 italic">
+                            Nu există sarcini momentan. <a href="/tasks/create" class="text-blue-500 underline">Adaugă una acum!</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
