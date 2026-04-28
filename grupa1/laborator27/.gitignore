@@ -1,0 +1,35 @@
+# Dependențe
+node_modules/
+jspm_packages/
+
+# Variabile de mediu (CRITIC: Nu urca parolele pe Git)
+.env
+.env.local
+.env.*.local
+
+# Log-uri
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Fișiere de sistem
+.DS_Store
+Thumbs.db
+
+# Build Tailwind (Opțional)
+# Dacă vrei ca alți devi să își genereze singuri CSS-ul, poți ignora output.css
+# public/stylesheets/output.css
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Diagnosticare Nodemon
+.nodemonignore
