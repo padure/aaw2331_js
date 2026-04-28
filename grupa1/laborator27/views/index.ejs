@@ -1,97 +1,78 @@
-<%- include('partials/head', { title: 'Acasă - Manager Sarcini' }) %>
+<%- include('partials/head', { title: 'Dashboard Simplu' }) %>
 
-<div class="container mx-auto px-4 py-10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-6 text-white shadow-lg">
-            <h3 class="text-lg font-medium opacity-80">Total Sarcini</h3>
-            <p class="text-4xl font-bold mt-2"><%= tasks.length %></p>
+<div class="container mx-auto px-4 py-12 max-w-6xl">
+    <header class="mb-10">
+        <h1 class="text-3xl font-light text-gray-800">Salutare!</h1>
+        <p class="text-gray-500 mt-1">Iată situația sarcinilor tale pentru astăzi.</p>
+    </header>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div class="bg-white border border-gray-100 p-6 rounded-xl shadow-sm">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Total</span>
+            <div class="text-3xl font-semibold text-gray-800 mt-1"><%= tasks.length %></div>
         </div>
-        <div class="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-6 text-white shadow-lg">
-            <h3 class="text-lg font-medium opacity-80">În lucru</h3>
-            <p class="text-4xl font-bold mt-2"><%= tasks.filter(t => t.status === 'in_progress').length %></p>
+        
+        <div class="bg-white border border-gray-100 p-6 rounded-xl shadow-sm">
+            <span class="text-xs font-bold text-blue-500 uppercase tracking-wider">În Lucru</span>
+            <div class="text-3xl font-semibold text-gray-800 mt-1">
+                <%= tasks.filter(t => t.status === 'in_progress').length %>
+            </div>
         </div>
-        <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-6 text-white shadow-lg">
-            <h3 class="text-lg font-medium opacity-80">Finalizate</h3>
-            <p class="text-4xl font-bold mt-2"><%= tasks.filter(t => t.status === 'completed').length %></p>
+
+        <div class="bg-white border border-gray-100 p-6 rounded-xl shadow-sm">
+            <span class="text-xs font-bold text-yellow-500 uppercase tracking-wider">În Așteptare</span>
+            <div class="text-3xl font-semibold text-gray-800 mt-1">
+                <%= tasks.filter(t => t.status === 'pending').length %>
+            </div>
+        </div>
+
+        <div class="bg-white border border-gray-100 p-6 rounded-xl shadow-sm">
+            <span class="text-xs font-bold text-green-500 uppercase tracking-wider">Finalizate</span>
+            <div class="text-3xl font-semibold text-gray-800 mt-1">
+                <%= tasks.filter(t => t.status === 'completed').length %>
+            </div>
         </div>
     </div>
 
-    <div class="mb-16">
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-gray-800 tracking-tight">Sarcini Active</h2>
-            <a href="/tasks/create" class="bg-gray-900 hover:bg-black text-white px-5 py-2.5 rounded-xl transition flex items-center gap-2 shadow-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
-                </svg>
-                Nouă
-            </a>
+    <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden mb-12">
+        <div class="px-6 py-4 border-b border-gray-50 flex justify-between items-center">
+            <h3 class="font-medium text-gray-700">Sarcini prioritare</h3>
+            <a href="/tasks" class="text-sm text-blue-600 hover:underline">Vezi tot</a>
         </div>
-
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-            <table class="min-w-full divide-y divide-gray-100">
-                <thead class="bg-gray-50/50">
-                    <tr>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase">Detalii</th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase">Prioritate</th>
-                        <th class="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase">Acțiuni</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-100 bg-white">
-                    <% const activeTasks = tasks.filter(t => t.status !== 'completed'); %>
-                    <% if (activeTasks.length > 0) { %>
-                        <% activeTasks.forEach(task => { %>
-                            <tr class="hover:bg-gray-50/50 transition">
-                                <td class="px-6 py-4">
-                                    <div class="font-semibold text-gray-900"><%= task.title %></div>
-                                    <div class="text-sm text-gray-500 truncate max-w-xs"><%= task.description %></div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
-                                        <%= task.priority === 'high' ? 'bg-red-50 text-red-700' : 
-                                           task.priority === 'medium' ? 'bg-blue-50 text-blue-700' : 'bg-gray-100 text-gray-600' %>">
-                                        <%= task.priority %>
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4 text-right space-x-3 text-sm font-medium">
-                                    <a href="/tasks/<%= task.id %>/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                    <form action="/tasks/<%= task.id %>/delete" method="POST" class="inline">
-                                        <button type="submit" class="text-red-500 hover:text-red-700" onclick="return confirm('Sigur?')">Șterge</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        <% }) %>
-                    <% } else { %>
-                        <tr>
-                            <td colspan="3" class="px-6 py-12 text-center text-gray-400 italic">Nu ai nicio sarcină activă. Relaxare plăcută!</td>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <tbody class="divide-y divide-gray-50">
+                    <% const urgentTasks = tasks.filter(t => t.status !== 'completed').slice(0, 5); %>
+                    <% urgentTasks.forEach(task => { %>
+                        <tr class="hover:bg-gray-50/50">
+                            <td class="px-6 py-4">
+                                <div class="text-sm font-medium text-gray-800"><%= task.title %></div>
+                            </td>
+                            <td class="px-6 py-4 text-right text-xs">
+                                <span class="px-2 py-1 rounded <%= task.priority === 'high' ? 'bg-red-50 text-red-600' : 'bg-gray-50 text-gray-500' %>">
+                                    <%= task.priority.toUpperCase() %>
+                                </span>
+                            </td>
                         </tr>
-                    <% } %>
+                    <% }) %>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div class="py-10 border-t border-gray-100">
-        <h2 class="text-2xl font-bold text-gray-800 mb-8 flex items-center gap-3">
-            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-            </span>
-            Realizări (Finalizate)
-        </h2>
-
-        <div class="swiper completedTasksSwiper !pb-12">
+    <div class="mt-8">
+        <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 text-center">Recent Finalizate</h3>
+        <div class="swiper completedTasksSwiper !pb-10">
             <div class="swiper-wrapper">
-                <% const completed = tasks.filter(t => t.status === 'completed'); %>
-                <% completed.forEach(task => { %>
+                <% tasks.filter(t => t.status === 'completed').forEach(task => { %>
                     <div class="swiper-slide">
-                        <div class="bg-gray-50 border border-gray-200 p-5 rounded-2xl h-full flex flex-col hover:border-green-300 transition group">
-                            <h4 class="font-bold text-gray-800 group-hover:text-green-700 transition"><%= task.title %></h4>
-                            <p class="text-gray-500 text-xs mt-2 line-clamp-2 flex-grow"><%= task.description %></p>
-                            <div class="mt-4 pt-4 border-t border-gray-200 flex items-center justify-between text-[10px] text-gray-400 uppercase font-bold tracking-widest">
-                                <span>Finalizat</span>
-                                <span><%= new Date(task.deadline).toLocaleDateString('ro-RO') %></span>
+                        <div class="bg-white border border-gray-100 p-4 rounded-lg text-center h-full">
+                            <div class="w-8 h-8 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                                </svg>
                             </div>
+                            <div class="text-sm font-medium text-gray-700 truncate"><%= task.title %></div>
                         </div>
                     </div>
                 <% }) %>
@@ -104,21 +85,20 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         new Swiper('.completedTasksSwiper', {
-            slidesPerView: 1,
-            spaceBetween: 20,
+            slidesPerView: 2,
+            spaceBetween: 15,
             pagination: { el: '.swiper-pagination', clickable: true },
             breakpoints: {
-                640: { slidesPerView: 2 },
                 768: { slidesPerView: 3 },
-                1024: { slidesPerView: 5 } // Cerința ta: 5 elemente pe LG
+                1024: { slidesPerView: 5 }
             }
         });
     });
 </script>
 
 <style>
-    .swiper-pagination-bullet-active { background: #10b981 !important; }
-    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .swiper-pagination-bullet { width: 6px; height: 6px; }
+    .swiper-pagination-bullet-active { background: #cbd5e1 !important; }
 </style>
 
 <%- include('partials/footer') %>
