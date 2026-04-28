@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title || 'Task Manager' %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body class="bg-slate-100 text-slate-900">
+    <nav class="bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="font-bold text-lg">Task Manager</a>
+            <div class="flex gap-3">
+                <a href="/tasks" class="text-sm hover:underline">Sarcini</a>
+                <a href="/tasks/create" class="text-sm hover:underline">Sarcină nouă</a>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-6xl mx-auto px-4 py-8">
