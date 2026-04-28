@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lista cărților</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 class="title">📚 Lista cărților</h1>
+
+    <div class="grid">
+      <% books.forEach(book=> { %>
+        <div class="card">
+          <h2 class="card-title">
+            <%= book.title %>
+          </h2>
+          <p class="card-author">de <%= book.author %>
+          </p>
+
+          <p class="card-description">
+            <%= book.description %>
+          </p>
+
+          <div class="card-footer">
+            <span class="badge">
+              <%= book.page %> pagini
+            </span>
+            <span class="price">
+              <%= book.price %> RON
+            </span>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+  </div>
+
+</body>
+
+</html>

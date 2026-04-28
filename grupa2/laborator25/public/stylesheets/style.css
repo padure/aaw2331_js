@@ -1,0 +1,89 @@
+/* Reset simplu */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Titlu */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Grid responsive */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Titlu carte */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Autor */
+.card-author {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+/* Descriere */
+.card-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Badge pagini */
+.badge {
+  background: #e5e7eb;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* Preț */
+.price {
+  font-weight: 600;
+  color: #2563eb;
+}

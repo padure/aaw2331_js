@@ -1,0 +1,25 @@
+{
+  "name": "laborator27",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "tw:build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/stylesheets/output.css",
+    "tw:watch": "npx @tailwindcss/cli -i ./src/input.css -o ./public/stylesheets/output.css --watch"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^17.4.2",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql2": "^3.22.3",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "tailwindcss": "^4.2.4"
+  }
+}

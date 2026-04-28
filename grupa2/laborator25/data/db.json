@@ -1,0 +1,84 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "Umbrele Timpului",
+            "description": "O poveste captivantă despre călătorii în timp și consecințele lor.",
+            "page": 320,
+            "price": 45.5,
+            "author": "Andrei Popescu"
+        },
+        {
+            "id": 2,
+            "title": "Ecoul Tăcerii",
+            "description": "Un roman psihologic despre regăsire și secrete ascunse.",
+            "page": 280,
+            "price": 39.99,
+            "author": "Maria Ionescu"
+        },
+        {
+            "id": 3,
+            "title": "Orașul de Cristal",
+            "description": "O aventură fantasy într-un oraș magic plin de mistere.",
+            "page": 410,
+            "price": 55.0,
+            "author": "Alex Dumitrescu"
+        },
+        {
+            "id": 4,
+            "title": "Drumul Spre Nord",
+            "description": "Povestea unei călătorii inițiatice prin peisaje nordice.",
+            "page": 350,
+            "price": 47.25,
+            "author": "Elena Georgescu"
+        },
+        {
+            "id": 5,
+            "title": "Codul Invisibil",
+            "description": "Thriller tehnologic despre hacking și conspirații globale.",
+            "page": 295,
+            "price": 42.0,
+            "author": "Mihai Stan"
+        },
+        {
+            "id": 6,
+            "title": "Grădina Secretelor",
+            "description": "O dramă emoționantă despre familie și iertare.",
+            "page": 260,
+            "price": 36.75,
+            "author": "Ioana Marinescu"
+        },
+        {
+            "id": 7,
+            "title": "Stelele din Adâncuri",
+            "description": "Explorarea oceanelor și a misterelor ascunse sub ape.",
+            "page": 380,
+            "price": 49.9,
+            "author": "Radu Petrescu"
+        },
+        {
+            "id": 8,
+            "title": "Foc și Gheață",
+            "description": "O poveste epică despre conflict și supraviețuire.",
+            "page": 500,
+            "price": 60.0,
+            "author": "Cristina Pavel"
+        },
+        {
+            "id": 9,
+            "title": "Umbra Adevărului",
+            "description": "Un detectiv descoperă adevăruri care schimbă totul.",
+            "page": 310,
+            "price": 44.0,
+            "author": "Daniel Florescu"
+        },
+        {
+            "id": 10,
+            "title": "Ultimul Apus",
+            "description": "O poveste romantică despre iubire și sacrificiu.",
+            "page": 275,
+            "price": 38.5,
+            "author": "Ana Radu"
+        }
+    ]
+}
