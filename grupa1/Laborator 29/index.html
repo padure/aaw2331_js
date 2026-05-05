@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaShop | Magazin online</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container">
+            <a href="#" class="logo">
+                <span class="logo-mark">N</span>
+                <span>NovaShop</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#products">Produse</a>
+                <a href="#cart">Coș</a>
+                <a href="#task">Sarcină</a>
+            </div>
+
+            <button class="cart-button" type="button" aria-label="Deschide coșul">
+                <span>Coș</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="eyebrow">Magazin demonstrativ pentru lecția JavaScript</span>
+                    <h1>Interfață de magazin online cu produse și coș de cumpărături</h1>
+                    <p>
+                        Elevii vor adăuga funcționalitățile JavaScript: adăugare produs în coș, actualizare cantitate,
+                        ștergere produs și calcularea totalului.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="primary-link" href="#products">Vezi produsele</a>
+                        <a class="secondary-link" href="#task">Vezi cerința</a>
+                    </div>
+                </div>
+
+                <aside class="hero-card">
+                    <div class="hero-card-top">
+                        <span class="status-dot"></span>
+                        <span>Stare proiect</span>
+                    </div>
+                    <h2>HTML + CSS pregătit</h2>
+                    <p>Fișierul <strong>app.js</strong> este gol și va fi completat de elevi.</p>
+                    <ul>
+                        <li>Design responsiv</li>
+                        <li>Carduri pentru produse</li>
+                        <li>Structură pentru coș</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section container" id="products">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Catalog</span>
+                    <h2>Produse disponibile</h2>
+                </div>
+                <p>Butonul „Adaugă în coș” nu are funcționalitate. Aceasta va fi implementată prin JavaScript.</p>
+            </div>
+
+            <div class="products-grid">
+                <article class="product-card" data-id="1" data-name="Laptop Orion X14" data-price="14999">
+                    <div class="product-image product-image-1">💻</div>
+                    <div class="product-content">
+                        <span class="product-category">Laptopuri</span>
+                        <h3>Laptop Orion X14</h3>
+                        <p>Procesor performant, ecran de 14 inch și autonomie potrivită pentru lucru zilnic.</p>
+                        <div class="product-footer">
+                            <span class="price">14 999 MDL</span>
+                            <button class="add-to-cart-btn" type="button">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="2" data-name="Căști Sonic Air" data-price="1299">
+                    <div class="product-image product-image-2">🎧</div>
+                    <div class="product-content">
+                        <span class="product-category">Audio</span>
+                        <h3>Căști Sonic Air</h3>
+                        <p>Căști wireless cu microfon integrat și carcasă compactă de încărcare.</p>
+                        <div class="product-footer">
+                            <span class="price">1 299 MDL</span>
+                            <button class="add-to-cart-btn" type="button">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="3" data-name="Tastatură NovaKeys" data-price="899">
+                    <div class="product-image product-image-3">⌨️</div>
+                    <div class="product-content">
+                        <span class="product-category">Accesorii</span>
+                        <h3>Tastatură NovaKeys</h3>
+                        <p>Tastatură mecanică pentru programare, gaming și lucru la birou.</p>
+                        <div class="product-footer">
+                            <span class="price">899 MDL</span>
+                            <button class="add-to-cart-btn" type="button">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="4" data-name="Mouse Vector Pro" data-price="549">
+                    <div class="product-image product-image-4">🖱️</div>
+                    <div class="product-content">
+                        <span class="product-category">Accesorii</span>
+                        <h3>Mouse Vector Pro</h3>
+                        <p>Mouse ergonomic cu senzor precis, recomandat pentru activități de productivitate.</p>
+                        <div class="product-footer">
+                            <span class="price">549 MDL</span>
+                            <button class="add-to-cart-btn" type="button">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="5" data-name="Monitor PixelView 27" data-price="3999">
+                    <div class="product-image product-image-5">🖥️</div>
+                    <div class="product-content">
+                        <span class="product-category">Monitoare</span>
+                        <h3>Monitor PixelView 27</h3>
+                        <p>Monitor de 27 inch, potrivit pentru dezvoltare web, design și lucru multitasking.</p>
+                        <div class="product-footer">
+                            <span class="price">3 999 MDL</span>
+                            <button class="add-to-cart-btn" type="button">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="6" data-name="Smartwatch Pulse Fit" data-price="1899">
+                    <div class="product-image product-image-6">⌚</div>
+                    <div class="product-content">
+                        <span class="product-category">Gadgeturi</span>
+                        <h3>Smartwatch Pulse Fit</h3>
+                        <p>Ceas inteligent pentru notificări, monitorizare activitate și gestionarea timpului.</p>
+                        <div class="product-footer">
+                            <span class="price">1 899 MDL</span>
+                            <button class="add-to-cart-btn" type="button">Adaugă în coș</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section cart-section container" id="cart">
+            <div class="cart-layout">
+                <div class="cart-panel">
+                    <div class="section-heading compact">
+                        <div>
+                            <span class="eyebrow">Coș</span>
+                            <h2>Coș de cumpărături</h2>
+                        </div>
+                    </div>
+
+                    <div class="cart-empty" id="cartEmpty">
+                        <div class="cart-empty-icon">🛒</div>
+                        <h3>Coșul este gol</h3>
+                        <p>Produsele adăugate prin JavaScript vor fi afișate aici.</p>
+                    </div>
+
+                    <div class="cart-items" id="cartItems">
+                        <!-- Elevii vor genera dinamic elementele coșului aici -->
+                    </div>
+                </div>
+
+                <aside class="summary-card">
+                    <h3>Rezumat comandă</h3>
+                    <div class="summary-row">
+                        <span>Produse</span>
+                        <strong id="summaryItems">0</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <strong id="summarySubtotal">0 MDL</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Livrare</span>
+                        <strong id="summaryDelivery">0 MDL</strong>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <strong id="summaryTotal">0 MDL</strong>
+                    </div>
+                    <button class="checkout-btn" type="button">Finalizează comanda</button>
+                    <p class="small-note">Butonul este doar vizual. Funcționalitatea va fi realizată ulterior.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section task-section container" id="task">
+            <div class="task-card">
+                <span class="eyebrow">Sarcină practică</span>
+                <h2>Funcționalități JavaScript care trebuie implementate</h2>
+                <ol>
+                    <li>Selectarea tuturor butoanelor <code>Adaugă în coș</code>.</li>
+                    <li>Preluarea datelor produsului din atributele <code>data-id</code>, <code>data-name</code> și <code>data-price</code>.</li>
+                    <li>Adăugarea produsului în coș la apăsarea butonului.</li>
+                    <li>Dacă produsul există deja în coș, se mărește cantitatea.</li>
+                    <li>Afișarea produselor în zona <code>#cartItems</code>.</li>
+                    <li>Actualizarea numărului de produse din <code>#cartCount</code>.</li>
+                    <li>Calcularea subtotalului și totalului comenzii.</li>
+                    <li>Adăugarea funcției de ștergere a unui produs din coș.</li>
+                    <li>Adăugarea funcției de modificare a cantității.</li>
+                    <li>Ascunderea mesajului „Coșul este gol” când există produse în coș.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>NovaShop — proiect educațional HTML, CSS și JavaScript.</p>
+            <p>Realizat pentru exersarea manipulării DOM.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
